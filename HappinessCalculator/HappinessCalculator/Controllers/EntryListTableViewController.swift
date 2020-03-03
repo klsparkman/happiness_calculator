@@ -7,7 +7,7 @@
 //
 
 import UIKit
-
+//Creating a notification key that we can call from anywhere, also known as a Global Property
 let notificationKey = Notification.Name(rawValue: "didChangeHappiness")
 
 class EntryListTableViewController: UITableViewController {
@@ -15,6 +15,7 @@ class EntryListTableViewController: UITableViewController {
     var averageHappiness: Int = 0 {
         //Property Observer
         didSet {
+            //Shouting out that we just updated our average happiness,.
             NotificationCenter.default.post(name: notificationKey, object: self.averageHappiness)
         }
     }
@@ -33,7 +34,7 @@ class EntryListTableViewController: UITableViewController {
         guard let cell = tableView.dequeueReusableCell(withIdentifier: "EntryCell", for: indexPath) as? EntryTableViewCell else {return UITableViewCell()}
         let entry = EntryController.entries[indexPath.row]
         cell.setEntry(entry: entry, averageHappiness: 0)
-        
+        //Telling our runner who it should give tasks to
         cell.delegate = self
         
         // Configure the cell...
@@ -51,9 +52,11 @@ class EntryListTableViewController: UITableViewController {
         averageHappiness = totalHappiness / EntryController.entries.count
     }
 }
-
+//Creating our Intern who will do the stuff
 extension EntryListTableViewController: EntryTableViewCellDelegate {
+    //Creating the list of instructions for what to do when our intern is told to do something
     func switchToggledOn(cell: EntryTableViewCell) {
+        //
         guard let entry = cell.entry else {return}
         EntryController.updateEntry(entry: entry)
         updateAverageHappiness()
