@@ -32,7 +32,7 @@
                                         <switch opaque="NO" contentMode="scaleToFill" horizontalHuggingPriority="750" verticalHuggingPriority="750" contentHorizontalAlignment="center" contentVerticalAlignment="center" on="YES" translatesAutoresizingMaskIntoConstraints="NO" id="Y0P-qM-XG8">
                                             <rect key="frame" x="345" y="11" width="51" height="31"/>
                                             <connections>
-                                                <action selector="isEnabledSwitchTapped:" destination="8qQ-ob-Rmy" eventType="valueChanged" id="GTn-PM-UMH"/>
+                                                <action selector="toggledIsIncluded:" destination="8qQ-ob-Rmy" eventType="valueChanged" id="Phu-4O-vXC"/>
                                             </connections>
                                         </switch>
                                         <stackView opaque="NO" contentMode="scaleToFill" axis="vertical" distribution="fillEqually" spacing="1" translatesAutoresizingMaskIntoConstraints="NO" id="P9F-Zk-tLM">
@@ -62,9 +62,15 @@
                                     </constraints>
                                 </tableViewCellContentView>
                                 <connections>
+<<<<<<< HEAD
+                                    <outlet property="higherOrLowerLabel" destination="9Qr-9f-wuQ" id="hGk-Sc-zck"/>
+                                    <outlet property="isEnabledSwitch" destination="Y0P-qM-XG8" id="PV9-VR-o81"/>
+                                    <outlet property="titleLabel" destination="lca-xg-8F4" id="e6W-JD-wu0"/>
+=======
                                     <outlet property="higherOrLowerLabel" destination="9Qr-9f-wuQ" id="DE1-hj-nZg"/>
                                     <outlet property="isEnabledSwitch" destination="Y0P-qM-XG8" id="RHy-fZ-EOD"/>
                                     <outlet property="titleLabel" destination="lca-xg-8F4" id="UiS-jJ-lKg"/>
+>>>>>>> master
                                 </connections>
                             </tableViewCell>
                         </prototypes>
@@ -74,9 +80,6 @@
                         </connections>
                     </tableView>
                     <navigationItem key="navigationItem" title="Entry List" id="bf2-zf-Zjq"/>
-                    <connections>
-                        <outlet property="happinessLabel" destination="eXp-3p-NFg" id="JKz-eh-uhv"/>
-                    </connections>
                 </tableViewController>
                 <placeholder placeholderIdentifier="IBFirstResponder" id="agr-NY-ew5" userLabel="First Responder" customClass="UIResponder" sceneMemberID="firstResponder"/>
             </objects>
