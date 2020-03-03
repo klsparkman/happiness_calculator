@@ -23,6 +23,7 @@ class EntryCellTableViewCell: UITableViewCell {
     //Mark: - Helper functions
     func setEntry(entry: Entry, averageHappiness: Int) {
         self.entry = entry
+        
     }
     
     func updatedUI(averageHappiness: Int) {
